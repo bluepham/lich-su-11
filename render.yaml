@@ -1,0 +1,30 @@
+# Deploy the full Lich Su 11 app (React + Express + SQLite) on Render.
+# Requires a paid web service because persistent disks are not available on free services.
+services:
+  - type: web
+    name: lich-su-11-3d
+    runtime: node
+    plan: 1c-2g
+    region: singapore
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: node --import tsx server.ts
+    healthCheckPath: /api/health
+    disk:
+      name: lich-su-11-storage
+      mountPath: /opt/render/project/src/storage
+      sizeGB: 5
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 22
+      - key: DATABASE_PATH
+        value: /opt/render/project/src/storage/lichsu11.sqlite
+      - key: UPLOAD_STORAGE_DIR
+        value: /opt/render/project/src/storage/models
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: INITIAL_ADMIN_PASSWORD
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
