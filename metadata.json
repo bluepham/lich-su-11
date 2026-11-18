@@ -1,0 +1,6 @@
+{
+  "name": "LỊCH SỬ 11 3D – Khám phá Lịch sử qua Không gian số",
+  "description": "Hệ sinh thái học tập Lịch sử lớp 11 (GDPT 2018 – Kết nối tri thức với cuộc sống) với bảo tàng mô hình 3D GLB tương tác, tài khoản học sinh, quản trị giáo viên, đấu trường trò chơi, kiểm tra trực tuyến và trợ lý Sử Gia AI 11 – Trường THPT Hòa Minh, Vĩnh Long.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

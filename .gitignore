@@ -1,0 +1,13 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+.playwright-cli/
+data/*.sqlite*
+public/uploads/models/*
+!public/uploads/models/.gitkeep
+public/models/assets_pack/_raw_*.glb
