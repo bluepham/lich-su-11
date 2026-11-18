@@ -266,6 +266,8 @@ async function startServer(): Promise<void> {
 
   // Serve generated .glb models, Python .glb simulation scripts, Blender scripts, and uploaded assets immediately
   app.use('/models', express.static(path.resolve(process.cwd(), 'public', 'models'), { maxAge: '1h' }));
+  // Serve teacher-uploaded models from the configured persistent storage directory.
+  app.use('/uploads/models', express.static(uploadDir, { maxAge: '1h' }));
   app.use('/uploads', express.static(path.resolve(process.cwd(), 'public', 'uploads')));
   app.use('/python_glb', express.static(path.resolve(process.cwd(), 'public', 'python_glb')));
   app.use('/blender_scripts', express.static(path.resolve(process.cwd(), 'public', 'blender_scripts')));
