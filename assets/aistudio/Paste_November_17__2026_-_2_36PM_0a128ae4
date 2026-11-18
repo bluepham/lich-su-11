@@ -1,0 +1,1325 @@
+# PROMPT XÂY DỰNG HỆ SINH THÁI LỊCH SỬ 11 3D
+
+## I. VAI TRÒ VÀ YÊU CẦU CHUNG
+
+Bạn là nhóm chuyên gia gồm:
+
+- Chuyên gia phát triển ứng dụng web giáo dục.
+- Giáo viên chuyên môn Lịch sử THPT.
+- Kỹ sư lập trình web 3D bằng Three.js.
+- Chuyên gia Python và Blender, am hiểu định dạng GLB.
+- Chuyên gia cơ sở dữ liệu, xác thực và bảo mật.
+- Chuyên gia thiết kế trải nghiệm người dùng (UI/UX).
+- Chuyên gia tích hợp AI với Google AI Studio và Gemini.
+
+**NHIỆM VỤ:** Xây dựng một website học tập Lịch sử lớp 11 hoàn chỉnh, có mô hình lịch sử 3D tương tác, tài khoản học sinh, hệ thống quản trị giáo viên, cơ sở dữ liệu, trợ lý AI, bài tập, trò chơi và hệ thống thống kê kết quả học tập.
+
+**Tên ứng dụng:**
+
+LỊCH SỬ 11 3D – KHÁM PHÁ LỊCH SỬ QUA KHÔNG GIAN SỐ
+
+**Khẩu hiệu:**
+
+"Chạm vào quá khứ – Khám phá lịch sử – Kiến tạo tương lai."
+
+**Đơn vị:** Trường THPT Hòa Minh, tỉnh Vĩnh Long.
+
+**Môn học:** Lịch sử lớp 11.
+
+**Chương trình:** Giáo dục phổ thông 2018.
+
+**Sách giáo khoa:** Lịch sử 11 – Kết nối tri thức với cuộc sống, theo nội dung sách được sử dụng thống nhất.
+
+**Yêu cầu đặc biệt:** Đây phải là một ứng dụng thực sự hoạt động, không phải ảnh giao diện, website mẫu tĩnh hoặc bản trình diễn với các nút không có chức năng.
+
+Các tính năng được yêu cầu phải có mã nguồn, xử lý dữ liệu, điều hướng và kết quả tương ứng.
+
+---
+
+# II. THIẾT KẾ GIAO DIỆN WEBSITE
+
+## 1. Phong cách tổng thể
+
+Thiết kế một website giáo dục hiện đại kết hợp không gian bảo tàng lịch sử ảo và trải nghiệm khám phá 3D.
+
+Phong cách gồm:
+
+- Màu xanh đêm, vàng đồng, trắng ngà và đỏ trầm.
+- Phông chữ tiếng Việt rõ ràng, dễ đọc.
+- Các thẻ bài học có hiệu ứng chiều sâu.
+- Các nút chức năng có biểu tượng dễ hiểu.
+- Hiệu ứng chuyển trang mượt, không gây rối mắt.
+- Trang chủ có cảnh lịch sử 3D chuyển động nhẹ.
+- Hình ảnh lịch sử có nguồn, chú thích và độ tương phản tốt.
+- Hoạt động ổn định trên máy tính, máy tính bảng và điện thoại.
+
+Trang web gồm ba chế độ:
+
+1. Khách tham quan: xem giới thiệu và nội dung trải nghiệm được công khai.
+2. Học sinh: đăng nhập, học bài, thao tác mô hình, làm bài và lưu kết quả.
+3. Giáo viên quản trị: quản lý toàn bộ nội dung và dữ liệu học tập.
+
+## 2. Trang chủ
+
+Phần đầu trang hiển thị:
+
+**LỊCH SỬ 11 3D**
+
+Khám phá các sự kiện, nhân vật và không gian lịch sử qua mô hình ba chiều tương tác.
+
+Thanh điều hướng:
+
+- Trang chủ
+- Chương trình học
+- Khám phá 3D
+- Bản đồ lịch sử
+- Dòng thời gian
+- Trò chơi
+- Luyện tập – Kiểm tra
+- Trợ lý AI
+- Đăng nhập
+
+Phía trên bên phải có hai nút:
+
+**HỌC SINH** và **GIÁO VIÊN**.
+
+Ở trung tâm trang chủ:
+
+Một mô hình 3D lịch sử được trình chiếu bằng WebGL, có thể sử dụng cảnh Bạch Đằng năm 938 khi tệp GLB đã được bổ sung.
+
+Bên dưới bố trí các thẻ:
+
+- 6 chủ đề học tập
+- 13 bài học
+- Thư viện 3D
+- Khám phá theo dòng thời gian
+- Nhiệm vụ học tập
+- Luyện tập thông minh
+
+Số lượng mô hình, học sinh và kết quả học tập phải lấy từ cơ sở dữ liệu thực tế. Không hiển thị số liệu giả như dữ liệu vận hành.
+
+---
+
+# III. HỆ THỐNG TÀI KHOẢN HỌC SINH
+
+ĐÂY LÀ CHỨC NĂNG BẮT BUỘC PHẢI LÀM HOÀN CHỈNH.
+
+## 1. Đăng ký tài khoản học sinh
+
+Khi học sinh chọn "Đăng ký", hiển thị một biểu mẫu gồm:
+
+| Trường thông tin | Yêu cầu |
+|---|---|
+| Họ và tên học sinh | Bắt buộc |
+| Lớp | Bắt buộc, ví dụ 11A1 |
+| Tên đăng nhập | Học sinh tự đặt, không trùng |
+| Mật khẩu | Học sinh tự đặt |
+| Nhập lại mật khẩu | Phải trùng mật khẩu |
+
+Không yêu cầu email.
+
+Không yêu cầu số điện thoại.
+
+Không yêu cầu OTP.
+
+Không yêu cầu học sinh nhập mã ID.
+
+Hệ thống phải tự tạo một mã định danh nội bộ duy nhất cho mỗi học sinh bằng UUID. Mã này không cần hiển thị trên biểu mẫu.
+
+**Quy trình đăng ký:**
+
+Bước 1. Học sinh nhập đầy đủ thông tin.
+
+Bước 2. Hệ thống kiểm tra:
+
+- Họ tên không được bỏ trống.
+- Lớp phải được chọn hoặc nhập hợp lệ.
+- Tên đăng nhập không trùng.
+- Mật khẩu đạt điều kiện bảo mật.
+- Hai mật khẩu phải giống nhau.
+
+Bước 3. Gửi thông tin đến máy chủ.
+
+Bước 4. Máy chủ băm mật khẩu bằng Argon2id rồi lưu vào cơ sở dữ liệu.
+
+Bước 5. Tạo tài khoản và phiên đăng nhập an toàn.
+
+Bước 6. Chuyển đến trang cá nhân học sinh.
+
+Bước 7. Giáo viên nhìn thấy tài khoản mới trong bảng quản trị.
+
+**Lưu ý:** Giáo viên được xem tên, lớp, tên đăng nhập, trạng thái tài khoản nhưng không được xem mật khẩu gốc. Khi học sinh quên mật khẩu, giáo viên sử dụng chức năng đặt lại mật khẩu.
+
+## 2. Đăng nhập học sinh
+
+Biểu mẫu chỉ cần:
+
+- Tên đăng nhập
+- Mật khẩu
+
+Sau khi đăng nhập thành công, hiển thị:
+
+"Chào mừng [Họ và tên] – Lớp [Tên lớp] đến với LỊCH SỬ 11 3D."
+
+Hệ thống phải lưu trạng thái đăng nhập bằng phiên bảo mật.
+
+Sau khi tải lại trang, học sinh không bị mất tài khoản và tiến độ học tập.
+
+Mỗi học sinh có dữ liệu độc lập:
+
+- Bài đã học.
+- Mô hình đã khám phá.
+- Điểm kiểm tra.
+- Số lần làm bài.
+- Nhiệm vụ hoàn thành.
+- Ghi chú cá nhân.
+- Huy hiệu.
+- Tiến trình học tập.
+
+## 3. Trang cá nhân học sinh
+
+Thiết kế dashboard gồm:
+
+**Thông tin cá nhân**
+
+- Họ và tên
+- Lớp
+- Tên đăng nhập
+- Ngày tạo tài khoản
+- Nút đổi mật khẩu
+- Nút đăng xuất
+
+**Kết quả học tập**
+
+- Số bài hoàn thành trên 13 bài.
+- Tiến độ theo từng chủ đề.
+- Điểm trung bình các bài đã làm.
+- Bài kiểm tra gần nhất.
+- Nhiệm vụ chưa hoàn thành.
+- Đề xuất nội dung nên ôn tập.
+
+Có biểu đồ thể hiện kết quả theo thời gian và từng chủ đề.
+
+Dữ liệu phải được lưu vào cơ sở dữ liệu, không chỉ lưu trong localStorage.
+
+---
+
+# IV. TÀI KHOẢN GIÁO VIÊN – QUẢN TRỊ
+
+## 1. Đăng nhập giáo viên chỉ bằng mật khẩu
+
+**Yêu cầu đặc biệt: Giáo viên KHÔNG cần nhập tên đăng nhập, email hoặc ID.**
+
+Tại trang chủ có nút "GIÁO VIÊN".
+
+Khi bấm vào, mở giao diện:
+
+**ĐĂNG NHẬP QUẢN TRỊ**
+
+Chỉ có duy nhất một trường:
+
+"Mật khẩu quản trị"
+
+Nút "ĐĂNG NHẬP".
+
+Mật khẩu khởi tạo để thử nghiệm:
+
+**123456**
+
+Hệ thống phải xác minh mật khẩu trên máy chủ, không đặt mật khẩu hay giá trị băm công khai trong JavaScript phía trình duyệt.
+
+Mật khẩu khởi tạo được cấu hình trên máy chủ bằng biến môi trường, băm và lưu an toàn. Sau lần đăng nhập đầu, có chức năng yêu cầu đổi sang mật khẩu mạnh trước khi đưa website lên Internet.
+
+Không tạo biểu mẫu yêu cầu nhập ID giáo viên.
+
+Không yêu cầu đăng ký tài khoản giáo viên.
+
+Không yêu cầu OTP trong giao diện thử nghiệm.
+
+Nếu nhập sai, thông báo "Mật khẩu quản trị không chính xác", có giới hạn số lần thử và thời gian chờ để ngăn dò mật khẩu.
+
+Nếu nhập đúng, máy chủ tạo phiên quản trị và chuyển đến:
+
+`/admin/dashboard`
+
+Không cho phép truy cập `/admin` chỉ bằng cách sửa đường dẫn nếu chưa đăng nhập thành công.
+
+## 2. Dashboard giáo viên
+
+Thiết kế trang quản trị với menu bên trái:
+
+1. Tổng quan
+2. Quản lý học sinh
+3. Quản lý lớp học
+4. Quản lý bài học
+5. Quản lý mô hình 3D
+6. Quản lý trò chơi
+7. Ngân hàng câu hỏi
+8. Kiểm tra – Chấm điểm
+9. Thống kê – Báo cáo
+10. Trợ lý AI
+11. Cài đặt hệ thống
+12. Đăng xuất
+
+Trang tổng quan hiển thị dữ liệu thực:
+
+- Tổng số học sinh đã đăng ký.
+- Số lớp đang sử dụng.
+- Số học sinh có hoạt động gần đây.
+- Số bài học được công bố.
+- Số mô hình GLB đang hoạt động.
+- Số lượt hoàn thành bài kiểm tra.
+- Điểm trung bình theo lớp.
+- Các nhiệm vụ chưa được chấm.
+
+## 3. Quản lý học sinh
+
+Giáo viên được xem bảng:
+
+| STT | Họ và tên | Lớp | Tên đăng nhập | Trạng thái | Thao tác |
+|---|---|---|---|---|---|
+| Tự động | Từ dữ liệu đăng ký | Từ dữ liệu đăng ký | Từ dữ liệu đăng ký | Hoạt động/Khóa | Xem, sửa, khóa, đặt lại mật khẩu |
+
+Các dòng trong bảng phải đọc trực tiếp từ database.
+
+Chức năng:
+
+- Tìm kiếm theo họ tên.
+- Lọc theo lớp.
+- Lọc theo trạng thái.
+- Xem học sinh mới đăng ký.
+- Sửa tên hoặc lớp.
+- Khóa, mở khóa tài khoản.
+- Đặt lại mật khẩu.
+- Xem kết quả học tập từng học sinh.
+- Xem lịch sử hoàn thành bài.
+- Xuất danh sách ra Excel hoặc CSV.
+- Xuất bảng điểm từng lớp.
+- Xóa tài khoản theo quy trình có xác nhận.
+
+Khi đặt lại mật khẩu, tạo mật khẩu tạm thời hoặc cho giáo viên đặt mật khẩu mới, băm trước khi lưu, yêu cầu học sinh đổi khi đăng nhập.
+
+Không lưu mật khẩu gốc để giáo viên đọc lại.
+
+## 4. Quản lý lớp
+
+Giáo viên có thể:
+
+- Thêm lớp, ví dụ 11A1, 11A2, 11A3.
+- Sửa tên lớp.
+- Xem sĩ số dựa trên tài khoản.
+- Chuyển học sinh sang lớp khác.
+- Giao bài tập theo lớp.
+- Giao bài kiểm tra.
+- Xem bảng xếp hạng của từng lớp.
+- Xuất báo cáo lớp.
+
+Giáo viên được phép đặt thời gian mở và đóng bài kiểm tra.
+
+---
+
+# V. KHO NỘI DUNG LỊCH SỬ 11
+
+Xây dựng chương trình gồm 6 chủ đề và 13 bài học theo danh mục sau:
+
+| Bài | Nội dung |
+|---|---|
+| 1 | Một số vấn đề chung về cách mạng tư sản |
+| 2 | Sự xác lập và phát triển của chủ nghĩa tư bản |
+| 3 | Sự hình thành Liên bang Xô viết |
+| 4 | Chủ nghĩa xã hội sau Chiến tranh thế giới thứ hai |
+| 5 | Quá trình xâm lược và cai trị thực dân ở Đông Nam Á |
+| 6 | Hành trình đi đến độc lập dân tộc ở Đông Nam Á |
+| 7 | Chiến tranh bảo vệ Tổ quốc trong lịch sử Việt Nam |
+| 8 | Một số cuộc khởi nghĩa và chiến tranh giải phóng trong lịch sử Việt Nam |
+| 9 | Cuộc cải cách của Hồ Quý Ly và triều Hồ |
+| 10 | Cuộc cải cách của Lê Thánh Tông |
+| 11 | Cuộc cải cách của Minh Mạng |
+| 12 | Vị trí và tầm quan trọng của Biển Đông |
+| 13 | Việt Nam và Biển Đông |
+
+Tên bài và nội dung khi công bố phải được giáo viên đối chiếu với bản SGK đang sử dụng.
+
+## Cấu trúc của từng bài
+
+Khi học sinh mở một bài, hiển thị các tab:
+
+**1. Mục tiêu bài học**
+
+Nêu yêu cầu cần đạt về kiến thức, năng lực và phẩm chất.
+
+**2. Khám phá kiến thức**
+
+- Nội dung trọng tâm.
+- Mốc thời gian.
+- Nhân vật lịch sử.
+- Nguyên nhân, diễn biến, kết quả và ý nghĩa nếu phù hợp.
+- Tư liệu lịch sử có ghi nguồn.
+- Hình ảnh minh họa.
+
+**3. Không gian lịch sử 3D**
+
+Hiển thị mô hình liên quan đến nội dung bài học.
+
+**4. Dòng thời gian**
+
+Hiển thị các sự kiện theo trình tự và cho phép học sinh nhấn để tìm hiểu.
+
+**5. Nhiệm vụ khám phá**
+
+Câu hỏi và hoạt động gắn với từng mô hình.
+
+**6. Luyện tập**
+
+Các câu hỏi tương tác giúp củng cố kiến thức.
+
+**7. Vận dụng**
+
+Tình huống giải thích, so sánh, đánh giá hoặc liên hệ thực tiễn.
+
+**8. Tự đánh giá**
+
+Hiển thị kết quả bài học và gợi ý nội dung cần ôn.
+
+**Điều kiện:** Không tự viết toàn bộ kiến thức lịch sử như dữ kiện đã kiểm duyệt khi chưa có SGK hoặc tư liệu được giáo viên cung cấp. Nội dung cần có trạng thái "Bản nháp" và "Đã duyệt".
+
+---
+
+# VI. THƯ VIỆN MÔ HÌNH LỊCH SỬ 3D
+
+Đây là chức năng trung tâm, quan trọng nhất của ứng dụng.
+
+Tạo một khu vực:
+
+**BẢO TÀNG LỊCH SỬ 3D TƯƠNG TÁC**
+
+## 1. Yêu cầu kỹ thuật
+
+Sử dụng Three.js với các thành phần:
+
+- GLTFLoader để đọc mô hình `.glb`.
+- OrbitControls để xoay, phóng to và di chuyển góc nhìn.
+- AnimationMixer để chạy hoạt ảnh có trong mô hình.
+- WebGLRenderer hoặc hệ thống hiển thị tương đương.
+- Raycaster để phát hiện khi nhấn vào đối tượng.
+- Ánh sáng môi trường và ánh sáng định hướng.
+- Camera phối cảnh.
+- Giao diện nhãn 2D đặt tương ứng với vị trí đối tượng 3D.
+
+Tệp GLB được tạo bằng ChatGPT hỗ trợ lập trình Python trong Blender, sau đó xuất ra định dạng GLB.
+
+**Bắt buộc tải và hiển thị tệp GLB thật.**
+
+Không được thay mô hình 3D bằng hình ảnh tĩnh rồi gọi là 3D.
+
+## 2. Các chức năng tương tác
+
+Khi mở mô hình, học sinh có thể:
+
+- Giữ chuột trái để xoay mô hình.
+- Cuộn chuột để phóng to và thu nhỏ.
+- Di chuyển góc nhìn.
+- Nhấn đối tượng để xem tên và chú thích.
+- Nhấn nút "Phát chuyển động".
+- Nhấn "Tạm dừng".
+- Nhấn "Xem lại từ đầu".
+- Chọn tốc độ chuyển động.
+- Đặt lại camera.
+- Phóng to toàn màn hình.
+- Hiện hoặc ẩn chú thích.
+- Bật chế độ xem tổng thể.
+- Xem theo từng giai đoạn lịch sử.
+- Chuyển sang chế độ đồ họa nhẹ trên điện thoại.
+
+Nếu GLB có nhiều hoạt ảnh, hiển thị danh sách hoạt ảnh để học sinh hoặc giáo viên chọn.
+
+Nếu mô hình không có hoạt ảnh, chỉ hiển thị các điều khiển phù hợp, không tạo nút giả.
+
+## 3. Các nhóm mô hình cần xây dựng
+
+### Mô hình 1. Trận Bạch Đằng năm 938
+
+Gắn với Bài 7.
+
+Không gian gồm:
+
+- Lòng sông và hai bên bờ.
+- Bãi cọc bằng gỗ.
+- Các thuyền chiến cách điệu.
+- Mặt nước có hiệu ứng chuyển động.
+- Cây cối và địa hình.
+- Mũi tên chỉ hướng di chuyển.
+- Biển chú thích các giai đoạn.
+
+Các nút:
+
+"Giai đoạn 1 – Chuẩn bị trận địa"
+
+"Giai đoạn 2 – Dụ địch"
+
+"Giai đoạn 3 – Phản công"
+
+"Giai đoạn 4 – Kết quả và ý nghĩa"
+
+Học sinh có thể quan sát từng giai đoạn, sau đó trả lời câu hỏi:
+
+- Vì sao Ngô Quyền lựa chọn địa hình sông Bạch Đằng?
+- Vai trò của thủy triều trong cách đánh là gì?
+- Những yếu tố nào thể hiện sự chủ động của quân ta?
+- Chiến thắng Bạch Đằng năm 938 có ý nghĩa như thế nào?
+
+Yêu cầu chú thích rõ đây là mô hình tái hiện phục vụ học tập, không phải hình ảnh hay cấu trúc chính xác tuyệt đối của chiến trường lịch sử.
+
+### Mô hình 2. Khởi nghĩa Lam Sơn
+
+Gắn với Bài 8.
+
+Thiết kế bản đồ địa hình nổi có:
+
+- Khu vực Lam Sơn.
+- Các địa điểm hoạt động chính.
+- Các mốc 1418, 1424, 1426, 1427.
+- Mũi tên chuyển hướng hoạt động.
+- Hiệu ứng đánh dấu địa điểm.
+- Các điểm tương tác mở tư liệu lịch sử.
+
+Học sinh có thể chọn mốc năm để xem thay đổi diễn biến trên bản đồ.
+
+### Mô hình 3. Thành nhà Hồ
+
+Gắn với Bài 9.
+
+Cảnh 3D gồm:
+
+- Cổng thành bằng đá.
+- Tường thành.
+- Đường dẫn vào thành.
+- Không gian địa hình xung quanh.
+- Các điểm chú thích kiến trúc.
+- Camera quan sát toàn cảnh và cận cảnh.
+
+Tạo chế độ tham quan tự do.
+
+Học sinh có thể bấm vào từng khu vực để đọc thông tin.
+
+Không khẳng định các bộ phận tự dựng là phục dựng nguyên trạng nếu thiếu tư liệu xác thực.
+
+### Mô hình 4. Đông Nam Á thời cận đại
+
+Gắn với Bài 5 và Bài 6.
+
+Xây dựng bản đồ 3D có thể tương tác theo quốc gia và thời điểm.
+
+Học sinh có thể:
+
+- Chọn quốc gia.
+- Xem các mốc lịch sử.
+- Quan sát quá trình thay đổi.
+- So sánh hành trình giành độc lập.
+- Trả lời câu hỏi trên bản đồ.
+
+### Mô hình 5. Không gian Biển Đông
+
+Gắn với Bài 12 và Bài 13.
+
+Xây dựng mô hình địa hình và bản đồ tương tác.
+
+Hiển thị:
+
+- Vị trí Biển Đông.
+- Những tuyến giao thông hàng hải quan trọng.
+- Các khu vực địa lí được chọn.
+- Tư liệu lịch sử và các mốc liên quan.
+- Các điểm tìm hiểu vai trò địa chiến lược.
+
+Dữ liệu bản đồ phải dựa trên nguồn địa lí, lịch sử và pháp lí được thẩm định. Không tự suy diễn đường ranh giới hoặc phạm vi quyền tài phán.
+
+## 4. Kho thư viện và quản lý GLB
+
+Giáo viên được tải lên:
+
+- Tệp `.glb`.
+- Ảnh đại diện `.png`, `.jpg` hoặc `.webp`.
+- Tên mô hình.
+- Mã bài học liên kết.
+- Mô tả.
+- Nguồn tham khảo.
+- Tên tác giả.
+- Trạng thái kiểm duyệt.
+- Phiên bản mô hình.
+
+Có thể lưu tệp `.blend` trong khu vực tài nguyên dành cho giáo viên, nhưng phải xuất `.glb` để chạy trên website.
+
+Sau khi tải lên:
+
+1. Máy chủ kiểm tra loại tệp và dung lượng.
+2. Lưu tệp vào hệ thống lưu trữ.
+3. Ghi thông tin mô hình vào cơ sở dữ liệu.
+4. Hiển thị mô hình trong trình xem thử.
+5. Giáo viên điều chỉnh camera mặc định.
+6. Chọn các hoạt ảnh có sẵn.
+7. Gắn điểm tương tác và câu hỏi.
+8. Nhấn "Duyệt và công bố".
+9. Mô hình xuất hiện trong bài học của học sinh.
+
+Không cần sửa mã nguồn thủ công mỗi khi bổ sung một mô hình mới.
+
+---
+
+# VII. PHÒNG KHÁM PHÁ LỊCH SỬ 3D
+
+Tạo một chế độ học tập mang cảm giác tham quan bảo tàng số.
+
+Học sinh chọn một bài học và bước vào không gian 3D.
+
+Giao diện gồm:
+
+**Bên trái:** danh sách nhiệm vụ.
+
+**Chính giữa:** mô hình 3D tương tác.
+
+**Bên phải:** thông tin lịch sử, sự kiện, nhân vật và câu hỏi.
+
+**Phía dưới:** dòng thời gian và các nút điều khiển.
+
+## Quy trình khám phá
+
+**Bước 1. Quan sát**
+
+Học sinh được hướng dẫn xoay mô hình, tìm các chi tiết quan trọng.
+
+**Bước 2. Dự đoán**
+
+Hệ thống đưa câu hỏi:
+
+"Theo em, yếu tố nào trong không gian này có vai trò quyết định?"
+
+Học sinh chọn hoặc nhập câu trả lời.
+
+**Bước 3. Kiểm chứng**
+
+Hiển thị tư liệu hoặc thông tin do giáo viên duyệt để học sinh so sánh.
+
+**Bước 4. Giải thích**
+
+Học sinh nêu kết luận dựa trên các chi tiết quan sát và nguồn tư liệu.
+
+**Bước 5. Hoàn thành**
+
+Hệ thống ghi nhận tiến độ, phản hồi và điểm nếu bài có tiêu chí chấm.
+
+Tạo hệ thống huy hiệu như:
+
+- Nhà khám phá lịch sử.
+- Chuyên gia bản đồ.
+- Người giải mã sự kiện.
+- Nhà nghiên cứu trẻ.
+
+Huy hiệu chỉ trao khi học sinh thực sự đạt yêu cầu, không cấp ngẫu nhiên.
+
+---
+
+# VIII. TRÒ CHƠI HỌC TẬP
+
+Tạo khu vực "ĐẤU TRƯỜNG LỊCH SỬ 11".
+
+Có ít nhất sáu loại trò chơi:
+
+## Trò chơi 1. Dòng thời gian bí ẩn
+
+Học sinh kéo thả các sự kiện vào thứ tự thời gian đúng.
+
+Chấm điểm tự động.
+
+## Trò chơi 2. Ai là sử gia?
+
+Hiển thị câu hỏi trắc nghiệm bốn phương án.
+
+Có đồng hồ đếm ngược tùy cấu hình.
+
+## Trò chơi 3. Ghép mảnh lịch sử
+
+Học sinh nối:
+
+- Nhân vật với sự kiện.
+- Sự kiện với thời gian.
+- Địa điểm với diễn biến.
+- Nguyên nhân với kết quả.
+
+## Trò chơi 4. Giải mã bản đồ
+
+Học sinh chọn địa điểm đúng trên bản đồ tương tác.
+
+Có phản hồi khi chọn sai.
+
+## Trò chơi 5. Truy tìm chứng cứ
+
+Học sinh khám phá cảnh 3D, tìm các điểm thông tin và giải quyết câu hỏi.
+
+## Trò chơi 6. Hành trình vượt thử thách
+
+Mỗi bài học gồm nhiều chặng.
+
+Hoàn thành chặng trước để mở chặng tiếp theo.
+
+Mỗi trò chơi có:
+
+- Hướng dẫn.
+- Câu hỏi thực tế.
+- Đáp án được giáo viên duyệt.
+- Điểm.
+- Thời gian.
+- Kết quả.
+- Chức năng chơi lại.
+- Lưu tiến độ vào database.
+
+---
+
+# IX. HỆ THỐNG BÀI TẬP – KIỂM TRA
+
+Thiết kế khu vực luyện tập tương tự các nền tảng kiểm tra trực tuyến.
+
+Các loại câu hỏi:
+
+1. Trắc nghiệm bốn đáp án.
+2. Đúng – sai.
+3. Trả lời ngắn.
+4. Sắp xếp sự kiện.
+5. Kéo thả nối cặp.
+6. Tự luận.
+7. Câu hỏi kết hợp mô hình 3D.
+8. Câu hỏi đọc và phân tích tư liệu lịch sử.
+
+## 1. Chức năng học sinh
+
+Học sinh có thể:
+
+- Chọn bài.
+- Chọn mức độ.
+- Bắt đầu làm bài.
+- Xem số câu đã hoàn thành.
+- Theo dõi thời gian còn lại.
+- Chuyển câu hỏi.
+- Đánh dấu câu cần xem lại.
+- Nộp bài.
+- Xem kết quả khi được phép.
+- Xem giải thích đáp án.
+- Xem những nội dung cần ôn tập.
+
+## 2. Chức năng giáo viên
+
+Giáo viên có thể:
+
+- Tạo đề mới.
+- Nhập câu hỏi.
+- Chỉnh sửa câu hỏi.
+- Phân loại theo bài học.
+- Phân loại mức độ nhận biết, thông hiểu, vận dụng.
+- Chọn số câu.
+- Cài đặt thời gian.
+- Giao đề cho từng lớp.
+- Đặt thời gian mở và đóng đề.
+- Quản lý lượt làm bài.
+- Xem bài nộp.
+- Chấm câu tự luận.
+- Xuất bảng điểm.
+- Thống kê câu hỏi có nhiều học sinh trả lời sai.
+
+Các câu hỏi khách quan được chấm bằng đáp án có sẵn.
+
+Các câu tự luận được giáo viên chấm theo rubric, có thể nhận gợi ý của AI nhưng không dùng AI tự quyết định điểm số chính thức.
+
+## 3. Thống kê kết quả
+
+Tạo các biểu đồ:
+
+- Điểm trung bình từng lớp.
+- Phân bố điểm.
+- Tỷ lệ hoàn thành.
+- Kết quả theo bài học.
+- Kết quả theo chủ đề.
+- Mức độ tiến bộ theo thời gian.
+
+Dữ liệu phải lấy trực tiếp từ kết quả học sinh.
+
+---
+
+# X. TRỢ LÝ AI LỊCH SỬ 11
+
+Tên trợ lý:
+
+**SỬ GIA AI 11**
+
+Thiết kế chatbot tích hợp Gemini API.
+
+Giao diện có nhân vật hoặc biểu tượng sử gia, cửa sổ hội thoại và các câu hỏi gợi ý.
+
+Chức năng:
+
+- Giải thích thuật ngữ lịch sử.
+- Hỗ trợ phân tích nguyên nhân và kết quả.
+- Giải thích mối quan hệ giữa các sự kiện.
+- Đặt câu hỏi gợi mở.
+- Hướng dẫn học sinh khai thác mô hình 3D.
+- Đề xuất nội dung cần ôn tập.
+- Tạo câu hỏi luyện tập dựa trên nội dung đã được duyệt.
+- Hỗ trợ học sinh phân biệt dữ kiện và suy luận.
+
+**Quy tắc trả lời:**
+
+Ưu tiên sử dụng kho tài liệu Lịch sử 11 đã được giáo viên phê duyệt.
+
+Nếu thiếu thông tin, trợ lý phải thông báo chưa có đủ căn cứ.
+
+Không tự bịa niên đại, nhân vật, lời nói hoặc diễn biến.
+
+Không khẳng định chi tiết trong mô hình tái hiện là chứng cứ lịch sử.
+
+Khi có nguồn, trích dẫn tên bài hoặc tài liệu liên quan.
+
+Sau phần giải thích có thể đưa một câu hỏi gợi mở để học sinh suy nghĩ.
+
+Trợ lý không được xem hoặc tiết lộ mật khẩu, dữ liệu riêng tư của học sinh.
+
+API key phải được lưu trên máy chủ.
+
+Nếu chưa cấu hình Gemini API, hiển thị trạng thái "Trợ lý AI chưa được kích hoạt", đồng thời cho phép sử dụng hướng dẫn học tập có sẵn; không tạo câu trả lời giả.
+
+---
+
+# XI. QUẢN TRỊ NỘI DUNG WEBSITE
+
+Giáo viên phải có khả năng cập nhật ứng dụng qua giao diện quản trị mà không cần lập trình lại.
+
+Các nội dung chỉnh sửa được gồm:
+
+- Tên ứng dụng.
+- Logo.
+- Banner trang chủ.
+- Thông tin tác giả.
+- Giới thiệu dự án.
+- Danh mục chủ đề.
+- Nội dung bài học.
+- Mô hình 3D.
+- Điểm chú thích trên mô hình.
+- Hình ảnh và video.
+- Ngân hàng câu hỏi.
+- Trò chơi và nhiệm vụ.
+- Tài liệu PDF.
+- Liên kết học liệu.
+- Cấu hình trợ lý AI.
+
+Có các trạng thái:
+
+"Bản nháp" – "Chờ duyệt" – "Đã công bố" – "Ẩn".
+
+Có thể xem trước nội dung trước khi công bố cho học sinh.
+
+Lưu ngày cập nhật và phiên bản nội dung.
+
+---
+
+# XII. CƠ SỞ DỮ LIỆU – LƯU TRỮ LÂU DÀI
+
+Đây là phần bắt buộc.
+
+Không được thiết kế website mà học sinh đăng ký xong thì tài khoản biến mất khi tải lại trang.
+
+Đề xuất sử dụng:
+
+- Next.js và TypeScript.
+- Tailwind CSS.
+- Three.js.
+- Backend Node.js.
+- PostgreSQL hoặc Supabase PostgreSQL.
+- Prisma hoặc ORM tương đương.
+- Object Storage để lưu GLB và tài nguyên.
+- Gemini API phía máy chủ.
+
+Nếu đang dùng Google AI Studio và muốn giữ kiến trúc React/Node mặc định, được phép sử dụng kiến trúc đó, nhưng vẫn phải có backend thực và database bền vững.
+
+## 1. Thiết kế bảng dữ liệu
+
+**Bảng STUDENTS**
+
+Lưu:
+
+- id
+- full_name
+- class_name
+- username
+- password_hash
+- status
+- created_at
+- updated_at
+- last_login_at
+
+**Bảng ADMIN_SETTINGS**
+
+Lưu:
+
+- id nội bộ
+- password_hash
+- password_changed_at
+- login_security_settings
+
+Giáo viên không cần biết hoặc nhập id nội bộ khi đăng nhập.
+
+**Bảng CLASSES**
+
+- id
+- class_name
+- school_year
+- status
+
+**Bảng TOPICS**
+
+- id
+- title
+- description
+- sort_order
+
+**Bảng LESSONS**
+
+- id
+- topic_id
+- lesson_number
+- title
+- objectives
+- approved_content
+- publication_status
+
+**Bảng MODELS_3D**
+
+- id
+- lesson_id
+- model_name
+- file_url
+- thumbnail_url
+- description
+- source_reference
+- animation_names
+- camera_settings
+- review_status
+- created_at
+
+**Bảng MODEL_HOTSPOTS**
+
+- id
+- model_id
+- position_x
+- position_y
+- position_z
+- title
+- description
+- question_id
+
+**Bảng QUESTIONS**
+
+- id
+- lesson_id
+- question_type
+- content
+- answer_data
+- explanation
+- difficulty
+- approved
+
+**Bảng QUIZZES**
+
+- id
+- title
+- lesson_id
+- duration_minutes
+- publication_status
+
+**Bảng QUIZ_ATTEMPTS**
+
+- id
+- student_id
+- quiz_id
+- score
+- start_time
+- submitted_at
+- grading_status
+
+**Bảng QUIZ_ANSWERS**
+
+- id
+- attempt_id
+- question_id
+- student_answer
+- awarded_points
+- teacher_feedback
+
+**Bảng LEARNING_PROGRESS**
+
+- student_id
+- lesson_id
+- progress_percent
+- completion_status
+- updated_at
+
+**Bảng STUDENT_NOTES**
+
+- id
+- student_id
+- lesson_id
+- note_text
+- created_at
+
+**Bảng AUDIT_LOGS**
+
+Ghi lại các thao tác quan trọng của quản trị để kiểm tra khi cần.
+
+## 2. Yêu cầu dữ liệu
+
+- Mỗi tài khoản học sinh là duy nhất.
+- Không dùng localStorage làm nơi lưu trữ chính.
+- Không lưu mật khẩu dưới dạng văn bản.
+- Dữ liệu được lưu sau khi hoàn thành các thao tác quan trọng.
+- Mỗi học sinh chỉ xem được hồ sơ riêng.
+- Giáo viên được xem và quản lý dữ liệu theo quyền.
+- Có chức năng sao lưu và xuất dữ liệu.
+- Có quy trình khôi phục dữ liệu khi cần.
+- Có chính sách xóa dữ liệu khi không còn cần thiết.
+- Không gửi danh sách tài khoản học sinh cho mô hình AI.
+
+## 3. Bảo mật
+
+Triển khai xác thực máy chủ và phân quyền thực sự.
+
+Sử dụng Argon2id hoặc cơ chế băm mật khẩu an toàn tương đương.
+
+Phiên đăng nhập sử dụng cookie HttpOnly, Secure khi chạy HTTPS và SameSite phù hợp.
+
+Giới hạn số lần đăng nhập sai.
+
+Chống truy cập trái phép vào API quản trị.
+
+Kiểm tra quyền tại mỗi API, không chỉ ẩn nút trên giao diện.
+
+Không để học sinh sửa điểm hoặc giả mạo dữ liệu gửi lên máy chủ.
+
+Không công khai thông tin đăng nhập hoặc API key trong mã frontend.
+
+---
+
+# XIII. TRANG THỐNG KÊ CHO GIÁO VIÊN
+
+Tạo khu vực:
+
+**PHÂN TÍCH HIỆU QUẢ HỌC TẬP LỊCH SỬ 11**
+
+Các chỉ số:
+
+1. Tổng số học sinh.
+2. Tổng số tài khoản hoạt động.
+3. Số học sinh đã hoàn thành từng bài.
+4. Số lượt tương tác với các nhiệm vụ 3D.
+5. Tỷ lệ hoàn thành bài kiểm tra.
+6. Điểm trung bình.
+7. Chủ đề học sinh thường trả lời sai.
+8. Mức độ tiến bộ theo thời gian.
+
+Có bộ lọc:
+
+- Theo lớp.
+- Theo bài học.
+- Theo chủ đề.
+- Theo thời gian.
+- Theo từng học sinh.
+
+Tạo chức năng khảo sát trước và sau áp dụng sáng kiến.
+
+Các câu hỏi khảo sát gồm:
+
+- Em có hứng thú với môn Lịch sử không?
+- Em có dễ hình dung không gian lịch sử không?
+- Em có tự tin phân tích diễn biến sự kiện không?
+- Em có chủ động tìm hiểu tư liệu không?
+- Mô hình 3D có giúp em giải thích sự kiện rõ hơn không?
+
+Sử dụng thang đo 1–5.
+
+Cho phép giáo viên tạo phiếu khảo sát, phát cho học sinh, thu kết quả và xuất bảng tổng hợp.
+
+Không tự sinh ra số liệu khảo sát như kết quả thực nghiệm.
+
+---
+
+# XIV. THIẾT KẾ CHO ĐIỆN THOẠI
+
+Giao diện phải đáp ứng màn hình điện thoại.
+
+Khi học sinh sử dụng điện thoại:
+
+- Thanh menu thu gọn.
+- Các nút 3D đủ lớn để chạm.
+- Có điều khiển xoay bằng một ngón tay.
+- Phóng to bằng hai ngón tay.
+- Tự điều chỉnh chất lượng hiển thị theo thiết bị.
+- Không tràn chữ.
+- Không che mô hình bằng bảng điều khiển.
+- Bài kiểm tra dễ thao tác.
+- Có thông báo khi mô hình quá lớn hoặc tải thất bại.
+
+Cung cấp chế độ hình ảnh dự phòng khi thiết bị không hỗ trợ WebGL.
+
+---
+
+# XV. CẤU TRÚC WEBSITE
+
+Thiết kế các đường dẫn:
+
+**Trang công khai**
+
+- `/` – Trang chủ.
+- `/gioi-thieu` – Giới thiệu.
+- `/dang-nhap` – Đăng nhập học sinh.
+- `/dang-ky` – Đăng ký học sinh.
+- `/giao-vien` – Đăng nhập giáo viên bằng mật khẩu.
+
+**Khu vực học sinh**
+
+- `/dashboard`
+- `/chu-de`
+- `/bai-hoc`
+- `/bai-hoc/[id]`
+- `/thu-vien-3d`
+- `/kham-pha-3d/[id]`
+- `/ban-do`
+- `/dong-thoi-gian`
+- `/tro-choi`
+- `/luyen-tap`
+- `/kiem-tra`
+- `/tro-ly-ai`
+- `/ket-qua`
+- `/ho-so`
+
+**Khu vực giáo viên**
+
+- `/admin/dashboard`
+- `/admin/hoc-sinh`
+- `/admin/lop-hoc`
+- `/admin/bai-hoc`
+- `/admin/mo-hinh-3d`
+- `/admin/cau-hoi`
+- `/admin/de-kiem-tra`
+- `/admin/cham-diem`
+- `/admin/thong-ke`
+- `/admin/khao-sat`
+- `/admin/cai-dat`
+
+Tất cả đường dẫn có yêu cầu đăng nhập phải được bảo vệ ở máy chủ.
+
+---
+
+# XVI. YÊU CẦU VỀ MÃ NGUỒN
+
+Viết mã nguồn đầy đủ, tổ chức thành các thư mục rõ ràng.
+
+Tách riêng:
+
+- Giao diện.
+- Xác thực.
+- Truy cập cơ sở dữ liệu.
+- Quản lý bài học.
+- Quản lý mô hình 3D.
+- Cấu hình camera và hoạt ảnh.
+- Hệ thống câu hỏi.
+- Kiểm tra, chấm điểm.
+- Dashboard giáo viên.
+- Trợ lý AI.
+
+Tạo migration cho database.
+
+Tạo dữ liệu khởi tạo gồm:
+
+- Sáu chủ đề.
+- Mười ba bài học.
+- Các loại câu hỏi.
+- Cấu hình quản trị ban đầu.
+
+Không tự tạo tài khoản học sinh thật hoặc điểm số giả.
+
+Tạo thư mục lưu GLB và hướng dẫn cách thêm mô hình Blender.
+
+Bổ sung `.env.example` hướng dẫn cấu hình cơ sở dữ liệu, vùng lưu trữ, mật khẩu quản trị ban đầu và Gemini API key.
+
+Không đưa mật khẩu thật hoặc khóa bí mật lên GitHub.
+
+Viết hướng dẫn cài đặt, chạy thử và triển khai.
+
+---
+
+# XVII. QUY TRÌNH XÂY DỰNG ỨNG DỤNG
+
+Hãy triển khai theo các giai đoạn sau:
+
+## Giai đoạn 1. Tạo nền tảng
+
+- Khởi tạo dự án.
+- Thiết kế giao diện.
+- Tạo các trang.
+- Cấu hình database.
+- Tạo đăng ký, đăng nhập học sinh.
+- Tạo đăng nhập giáo viên chỉ bằng mật khẩu.
+- Kiểm thử lưu tài khoản.
+
+**Không chuyển sang giai đoạn sau nếu tài khoản chưa được lưu thật.**
+
+## Giai đoạn 2. Xây dựng bài học
+
+- Tạo 6 chủ đề.
+- Tạo 13 bài.
+- Thiết kế trang chi tiết bài học.
+- Tạo chức năng quản lý nội dung.
+- Tạo trạng thái duyệt nội dung.
+
+## Giai đoạn 3. Tích hợp mô hình 3D
+
+- Xây dựng GLB Viewer.
+- Xử lý ánh sáng và camera.
+- Tích hợp OrbitControls.
+- Tích hợp AnimationMixer.
+- Tạo bảng điều khiển.
+- Tạo điểm tương tác.
+- Tạo chức năng tải lên GLB từ admin.
+- Gắn mô hình vào bài học.
+
+## Giai đoạn 4. Xây dựng trò chơi và kiểm tra
+
+- Tạo ngân hàng câu hỏi.
+- Tạo bài kiểm tra.
+- Tạo trò chơi.
+- Lưu kết quả.
+- Tạo chức năng chấm điểm.
+- Tạo bảng thống kê.
+
+## Giai đoạn 5. Tích hợp AI
+
+- Kết nối Gemini API an toàn.
+- Tạo trợ lý Sử Gia AI 11.
+- Tạo cơ chế sử dụng nội dung được duyệt.
+- Kiểm tra chất lượng phản hồi.
+- Giới hạn quyền truy cập dữ liệu.
+
+## Giai đoạn 6. Kiểm thử toàn hệ thống
+
+Kiểm tra toàn bộ chức năng từ đăng ký tài khoản đến nộp bài và xem báo cáo.
+
+Không chỉ đánh giá giao diện đẹp mà phải xác nhận dữ liệu được xử lý chính xác.
+
+---
+
+# XVIII. CÁC TÌNH HUỐNG KIỂM THỬ BẮT BUỘC
+
+**Kiểm thử 1. Đăng ký học sinh**
+
+Đăng ký học sinh thử nghiệm với họ tên, lớp, tên đăng nhập và mật khẩu hợp lệ.
+
+Kết quả mong đợi: tài khoản được lưu, đăng nhập thành công, có hồ sơ riêng.
+
+**Kiểm thử 2. Kiểm tra trùng tài khoản**
+
+Đăng ký cùng tên đăng nhập lần thứ hai.
+
+Kết quả mong đợi: hệ thống từ chối và hiển thị thông báo phù hợp.
+
+**Kiểm thử 3. Đăng nhập giáo viên**
+
+Mở mục Giáo viên và nhập mật khẩu khởi tạo `123456` trong môi trường thử nghiệm.
+
+Kết quả mong đợi: hệ thống xác minh ở máy chủ, tạo phiên quản trị và mở dashboard.
+
+**Kiểm thử 4. Quản lý học sinh**
+
+Giáo viên mở bảng học sinh.
+
+Kết quả mong đợi: thấy đúng tài khoản mới đăng ký, không thấy mật khẩu gốc.
+
+**Kiểm thử 5. Bảo vệ quyền quản trị**
+
+Học sinh cố truy cập đường dẫn quản trị hoặc gọi API quản trị.
+
+Kết quả mong đợi: hệ thống từ chối truy cập.
+
+**Kiểm thử 6. Lưu kết quả**
+
+Học sinh hoàn thành một bài kiểm tra, đăng xuất và đăng nhập lại.
+
+Kết quả mong đợi: điểm và bài làm vẫn tồn tại.
+
+**Kiểm thử 7. Tải mô hình GLB**
+
+Giáo viên tải tệp `.glb` thật lên và gắn vào một bài.
+
+Kết quả mong đợi: học sinh xem, xoay, zoom và phát hoạt ảnh nếu tệp có animation.
+
+**Kiểm thử 8. Thống kê**
+
+Có nhiều học sinh thuộc các lớp khác nhau thực hiện bài kiểm tra.
+
+Kết quả mong đợi: dashboard lọc đúng dữ liệu theo lớp và bài học.
+
+**Kiểm thử 9. Làm mới trang**
+
+F5 hoặc đóng và mở lại trình duyệt.
+
+Kết quả mong đợi: dữ liệu không bị mất; phiên đăng nhập được khôi phục nếu còn hợp lệ.
+
+**Kiểm thử 10. Thiết bị di động**
+
+Kiểm tra các thao tác học bài, đăng nhập, mô hình 3D và làm bài trên màn hình nhỏ.
+
+Kết quả mong đợi: giao diện không vỡ, không tràn, thao tác cảm ứng sử dụng được.
+
+---
+
+# XIX. CÁC YÊU CẦU KHÔNG ĐƯỢC VI PHẠM
+
+1. Không tạo trang đăng nhập chỉ để minh họa mà không kết nối backend.
+2. Không lưu mật khẩu học sinh hoặc giáo viên dưới dạng văn bản.
+3. Không lưu dữ liệu học sinh chỉ trong localStorage.
+4. Không cho học sinh truy cập chức năng quản trị.
+5. Không tạo nút bấm không có chức năng.
+6. Không gọi ảnh 2D là mô hình GLB tương tác.
+7. Không hiển thị dữ liệu thống kê giả như dữ liệu thực tế.
+8. Không cho AI tự khẳng định thông tin lịch sử chưa được kiểm chứng.
+9. Không tự thay thế nội dung SGK bằng nội dung AI chưa duyệt.
+10. Không tự ý xóa cơ sở dữ liệu khi cập nhật phiên bản ứng dụng.
+11. Không công khai API key, mật khẩu quản trị hoặc thông tin nhạy cảm.
+12. Không triển khai website công khai trước khi hoàn thành kiểm thử bảo mật cơ bản.
+
+---
+
+# XX. YÊU CẦU KẾT QUẢ CUỐI CÙNG
+
+Hãy xây dựng ứng dụng hoàn chỉnh với những sản phẩm sau:
+
+**Sản phẩm 1:** Website LỊCH SỬ 11 3D có giao diện chuyên nghiệp.
+
+**Sản phẩm 2:** Hệ thống học sinh tự đăng ký và đăng nhập bằng tên đăng nhập, mật khẩu.
+
+**Sản phẩm 3:** Hệ thống giáo viên quản trị bằng mật khẩu, không yêu cầu nhập ID.
+
+**Sản phẩm 4:** Cơ sở dữ liệu lưu tài khoản, bài học, kết quả và tiến độ học tập.
+
+**Sản phẩm 5:** Kho 6 chủ đề và 13 bài Lịch sử 11.
+
+**Sản phẩm 6:** Thư viện mô hình GLB tương tác trực tiếp.
+
+**Sản phẩm 7:** Hệ thống khám phá lịch sử theo các giai đoạn và điểm tương tác.
+
+**Sản phẩm 8:** Trò chơi và kiểm tra trực tuyến.
+
+**Sản phẩm 9:** Trợ lý Sử Gia AI 11.
+
+**Sản phẩm 10:** Dashboard giáo viên với chức năng quản lý và thống kê thực tế.
+
+**Sản phẩm 11:** Mã nguồn đầy đủ, migration database và hướng dẫn cấu hình.
+
+**Sản phẩm 12:** Bộ kiểm thử các chức năng quan trọng.
+
+**Hãy bắt đầu xây dựng mã nguồn ứng dụng ngay, không chỉ mô tả ý tưởng hoặc tạo mockup. Ưu tiên hoàn thành hệ thống tài khoản học sinh, đăng nhập quản trị và cơ sở dữ liệu trước; sau đó triển khai lần lượt các chức năng học tập, 3D và AI. Nếu thiếu API key, kết nối database hoặc tệp GLB, hãy xác định rõ phần nào cần cấu hình, không giả lập chức năng đang hoạt động.**
